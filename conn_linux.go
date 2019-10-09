@@ -535,7 +535,7 @@ func (s *sysSocket) Getsockname() (unix.Sockaddr, error) {
 	return sa, err
 }
 
-func (s *sysSocket) Recvmsg(p, oob []byte, flags int) (int, int, int, unix.Sockaddr, error) {
+func (s *sysSocket) Recvmsg_slow(p, oob []byte, flags int) (int, int, int, unix.Sockaddr, error) {
 	var (
 		n, oobn, recvflags int
 		from               unix.Sockaddr
